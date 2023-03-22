@@ -43,13 +43,10 @@ console.log(targetArticle);
 
 /* [IN PROGRESS] add class 'active' to the correct article */
 
-
-
-
-}
-
 const links = document.querySelectorAll('.titles a');
 
-for (let link of links) {
-    (link.addEventListener('click', titleClickHandler));
+    for (let link of links) {
+        (link.addEventListener('click', titleClickHandler));
+    }
+
 }
