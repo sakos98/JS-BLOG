@@ -26,29 +26,28 @@
     console.log(targetArticle);
     /* [DONE] add class 'active' to the correct article */
     targetArticle.classList.add('active');
-  }
+  };
 
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles';
 
   function generateTitleLinks() {
-
     /* [Done] remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
-    titleList.innerHTML='';
+    titleList.innerHTML = '';
     /* for each article */
     const articles = document.querySelectorAll(optArticleSelector);
     let html = '';
-    for (let article of articles){
-    /* get the article id */
-    const articleId = article.getAttribute('id');
-    /* get the title from the title element */
-    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-    /* create HTML of the link */
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-    /* insert link into titleList */
-    html = html + linkHTML;
+    for (let article of articles) {
+      /* get the article id */
+      const articleId = article.getAttribute('id');
+      /* get the title from the title element */
+      const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+      /* create HTML of the link */
+      const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+      /* insert link into titleList */
+      html = html + linkHTML;
     }
     titleList.innerHTML = html;
 
@@ -58,4 +57,4 @@
     }
   }
   generateTitleLinks();
-};
+}
