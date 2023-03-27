@@ -31,7 +31,8 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelecor = '.post-author';
+  optArticleAuthorSelecor = '.post-author',
+  optTagsListSelector = '.tags.list';
 
 function generateTitleLinks() {
   /* [Done] remove contents of titleList */
@@ -59,6 +60,8 @@ function generateTitleLinks() {
 generateTitleLinks();
 
 function generateTags() {
+  /* [NEW] create a new variable allTags with an empty object */
+  let allTags = {};
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
   /* START LOOP: for every article: */
@@ -80,12 +83,33 @@ function generateTags() {
       const linkHTML = '<li><a href="#' + tag + '"><span>' + tag + '</span></a></li>';
       /* add generated code to html variable */
       html = html + linkHTML;
+      /* [NEW] check if this link is NOT already in allTags */
+      if(!allTags[tag]){
+        /* [NEW] add generated code to allTags array */
+      allTags[tag] = 1; 
+      } else {
+        allTags[tag]++;
+      }
       /* END LOOP: for each tag */
     }
     /* insert HTML of all the links into the tags wrapper */
     tagWrapper.innerHTML = html;
     /* END LOOP: for every article: */
   }
+  /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector(optTagsListSelector);
+  /* [NEW] create variable for all links HTML code */
+let allTagsHTML = '';
+
+/* [NEW] START LOOP: for each tag in allTags: */
+for(let tag in allTags){
+  /* [NEW] generate code of a link and add it to allTagsHTML */
+  allTagsHTML += tag + ' (' + allTags[tag] + ') ';
+}
+/* [NEW] END LOOP: for each tag in allTags: */
+const tagsList = '<li><a href="#author' + allTags + '"><span>' + allTags + '</span></a></li>';
+/*[NEW] add HTML from allTagsHTML to tagList */
+tagList.innerHTML = allTagsHTML;
 }
 generateTags();
 
@@ -132,7 +156,7 @@ addClickListenersToTags();
 
 function generateAuthors() {
   /* find all articles */
-  const articles = document.querySelectorAll(article);
+  const articles = document.querySelectorAll('article');
   /* START LOOP: for every article: */
   for (let article of articles) {
     /* find tags wrapper */
