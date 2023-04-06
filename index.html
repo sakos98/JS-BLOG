@@ -14,7 +14,7 @@
           </ul>
         </aside>
         <section class="posts">
-          <article class="post active" id="article-1" data-tags="cat cactus scissors">
+          <article class="post active" id="article-1" data-tags="cat cactus scissors" data-authors="Mickiewicz">
             <h3 class="post-title">Article 1</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -35,7 +35,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-2" data-tags="cat cactus scissors">
+          <article class="post" id="article-2" data-tags="cat cactus scissors" data-authors="Mickiewicz">
             <h3 class="post-title">Article 2</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -57,7 +57,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-3" data-tags="cat cactus scissors">
+          <article class="post" id="article-3" data-tags="cat cactus scissors" data-authors="Mickiewicz">
             <h3 class="post-title">Article 3</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -78,7 +78,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-4" data-tags="cat cactus">
+          <article class="post" id="article-4" data-tags="cat cactus" data-authors="Mickiewicz">
             <h3 class="post-title">Article 4</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -98,7 +98,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-5" data-tags="cat cactus">
+          <article class="post" id="article-5" data-tags="cat cactus" data-authors="Mickiewicz">
             <h3 class="post-title">Article 5</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -118,7 +118,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-6" data-tags="cat cactus">
+          <article class="post" id="article-6" data-tags="cat cactus" data-authors="Mickiewicz"data-authors="Mickiewicz Adam">
             <h3 class="post-title">Article 6</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -140,7 +140,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-7" data-tags="cat cactus">
+          <article class="post" id="article-7" data-tags="cat cactus" data-authors="DaVinci">
             <h3 class="post-title">Article 7</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -160,7 +160,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-8" data-tags="cat">
+          <article class="post" id="article-8" data-tags="cat" data-authors="Mickiewicz">
             <h3 class="post-title">Article 8</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -182,7 +182,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-9" data-tags="scissors">
+          <article class="post" id="article-9" data-tags="scissors" data-authors="DaVinci">
             <h3 class="post-title">Article 9</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -203,7 +203,7 @@
               </ul>
             </div>
           </article>
-          <article class="post" id="article-10" data-tags="cactus">
+          <article class="post" id="article-10" data-tags="cactus" data-authors="Mickiewicz">
             <h3 class="post-title">Article 10</h3>
             <p class="post-author"></p>
             <div class="post-content">
@@ -233,22 +233,22 @@
           <ul class="list authors">
             <li>
               <a href="#">
-                <span class="author-name"></span>
+                <span class="author-name" data-authors="Mickiewicz"></span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="author-name"></span>
+                <span class="author-name" data-authors="DaVinci"></span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="author-name"></span>
+                <span class="author-name" data-authors="William"></span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="author-name"></span>
+                <span class="author-name" data-authors="JKRowling"></span>
               </a>
             </li>
           </ul>
@@ -275,7 +275,7 @@
   <script id="author-cloud-link" type="text/x-handlebars-template">
     {{#each authors}}
     <li>
-      <a href='#author-{{author}}' class="{{author}}" class="({{count}})">{{author}}</a>
+      <a href='#author-{{author}}' class="{{author}}" class="({{author}})">{{author}}</a>
     </li>
   {{/each}}
   </script>

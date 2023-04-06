@@ -230,7 +230,7 @@ function generateAuthors() {
     /* make html variable with empty string */
     let html = '';
     /* get tags from data-tags attribute */
-    const articleAuthor = article.getAttribute('data-tags');
+    const articleAuthor = article.getAttribute('data-authors');
     /* split tags into array */
     const articleTagsArray = articleAuthor.split(' ');
     console.log(articleTagsArray);
